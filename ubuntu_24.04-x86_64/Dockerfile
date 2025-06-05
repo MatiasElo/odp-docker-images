@@ -1,7 +1,8 @@
 FROM ubuntu:24.04
 
 ENV DPDK_VERSION=v23.11.4 \
-    XDP_VERSION=v1.2.3
+    XDP_VERSION=v1.2.3 \
+    ONNX_VERSION=1.16.3
 
 RUN apt-get update
 
@@ -52,6 +53,12 @@ RUN apt-get install -yy \
   python3-pip \
   python3-pyelftools \
   sudo
+
+RUN cd /usr/local && \
+    wget -O - \
+        https://github.com/microsoft/onnxruntime/releases/download/v${ONNX_VERSION}/onnxruntime-linux-x64-${ONNX_VERSION}.tgz | \
+        tar zx --strip-components=1 --wildcards "*/include" "*/lib" && \
+    ldconfig
 
 RUN cd $HOME && \
     git clone https://github.com/DPDK/dpdk-stable.git --branch ${DPDK_VERSION} --depth 1 ./dpdk && \
