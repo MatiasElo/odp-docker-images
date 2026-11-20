@@ -22,6 +22,7 @@ RUN apt-get install -yy \
   clang \
   gcc \
   gcc-15 \
+  gcc-16 \
   git \
   graphviz \
   iproute2 \
@@ -35,6 +36,7 @@ RUN apt-get install -yy \
   libpcap-dev \
   libssl-dev \
   libstdc++-15-dev \
+  libstdc++-16-dev \
   libsystemd-dev \
   libtool \
   llvm-dev \

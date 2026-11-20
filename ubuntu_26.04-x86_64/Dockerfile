@@ -20,6 +20,7 @@ RUN apt-get install -yy \
   clang \
   gcc \
   gcc-15 \
+  gcc-16 \
   gcc-multilib \
   git \
   graphviz \
@@ -34,6 +35,7 @@ RUN apt-get install -yy \
   libpcap-dev \
   libssl-dev \
   libstdc++-15-dev \
+  libstdc++-16-dev \
   libsystemd-dev \
   libtool \
   llvm-dev \
